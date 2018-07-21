@@ -49,14 +49,7 @@ do
     then
         num=$(( $num + 1 ))
         found=$(cat ${files[$i]} | sed "s/ /\n/g" | grep -oP '(?<"http).*(?=")' | wc -l)
-        #echo "------------------------------------------" >> "$PWD/searched.files"
         echo "$search" >> "$PWD/searched.links"
-        #echo "[$found]x in :" >> "$PWD/searched.files"
-        #echo "[${files[$i]}]" >> "$PWD/searched.files"
-        #echo "" >> "$PWD/searched.files"
-        #cat ${files[$i]} | grep "$2" >> "$PWD/searched.files"
-      #  echo "" >> "$PWD/searched.files"
-       # echo "" >> "$PWD/searched.files"
         allfound=$(($allfound + $found))
 
     fi
